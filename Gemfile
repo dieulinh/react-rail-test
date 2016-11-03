@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'coffee-script-source', '1.10.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
+gem 'responders'
 gem 'active_model_serializers', '~> 0.10.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -25,6 +26,7 @@ gem 'devise'
 gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'responders'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
