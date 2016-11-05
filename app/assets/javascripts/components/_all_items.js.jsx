@@ -1,7 +1,7 @@
 var AllItems = React.createClass({
   componentDidMount() {
     console.log("Component Did Mount");
-    $.getJSON('/api/items.json', (response) => {
+    $.getJSON('/api/v1/items.json', (response) => {
       this.setState({items: response})
     });
 
@@ -9,14 +9,18 @@ var AllItems = React.createClass({
   getInitialState() {
     return { items: []}
   },
+  handleDelete(id) {
+    this.props.handleDelete(id);
+  },
   render() {
-     var items = this.state.items.map((item) => {
+     var items = this.props.items.map((item) => {
           return (
             <div key={item.id}>
               <h3>{item.name}</h3>
               <p>
                 {item.description}
               </p>
+              <button onClick={this.handleDelete.bind(this, item.id)}>Delete</button>
             </div>
           )
         })
